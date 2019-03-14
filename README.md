@@ -1,2 +1,2 @@
 # taskmanager_coursework
-Android client fot
+Android client for work with DB
