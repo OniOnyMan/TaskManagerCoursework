@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/LoginScene.unity
+    guid: 18cf42649c47f084ba92b95368effd6a
+  - enabled: 1
+    path: Assets/Scenes/Index.unity
+    guid: 296da00d74e797a4597fbfa6ac6c6f90
+  - enabled: 1
+    path: Assets/Scenes/ControlPanel.unity
+    guid: dd6ea43df56b65348aadf4c7ac397fa8
+  - enabled: 1
+    path: Assets/Scenes/User/UsersList.unity
+    guid: c238a4869bc4794448d8295afa9c3d20
+  - enabled: 1
+    path: Assets/Scenes/User/UserAdd.unity
+    guid: b3b869a75456efd42ba7170a4818bbcf
+  - enabled: 1
+    path: Assets/Scenes/User/UserEdit.unity
+    guid: 5edee9cdb180c254894d17d1204f6b39
+  - enabled: 1
+    path: Assets/Scenes/User/UserNameEdit.unity
+    guid: fadace67e9efcde419b8494d5ced1f8c
+  - enabled: 1
+    path: Assets/Scenes/User/UserTokenEdit.unity
+    guid: 1fc3445de0737374fa75897ec29bf05d
+  - enabled: 1
+    path: Assets/Scenes/User/UserPasswordEdit.unity
+    guid: 74a97da1ebefb074ca899db487c37512
+  - enabled: 1
+    path: Assets/Scenes/User/UserRolesEdit.unity
+    guid: 020bd01f7042deb4c988702dc852b5d3
+  - enabled: 1
+    path: Assets/Scenes/Role/RolesList.unity
+    guid: 57faa4f4481d68747a05af4cb72fd0d2
+  - enabled: 1
+    path: Assets/Scenes/Role/RoleEdit.unity
+    guid: 7492b1b28d53d6b4883878125cb9ebc7
+  - enabled: 1
+    path: Assets/Scenes/Project/ProjectAdd.unity
+    guid: e39c69efbba9b89419806eff2e7f0de5
+  - enabled: 1
+    path: Assets/Scenes/Project/ProjectsList.unity
+    guid: 26e1ccab18283f7489629c3b49140855
+  - enabled: 1
+    path: Assets/Scenes/Project/ProjectView.unity
+    guid: 2482b5d5c38c80c4db4cf85d385df1f4
+  - enabled: 1
+    path: Assets/Scenes/Project/ProjectEdit.unity
+    guid: 5835a2f34e133194da17b952e4b0c168
+  - enabled: 1
+    path: Assets/Scenes/Tasks/TaskAdd.unity
+    guid: 9b324fd3e7adfd74bbcf3df79cebba9b
+  - enabled: 1
+    path: Assets/Scenes/Messages/MessagesView.unity
+    guid: a6829dffb1adbf24b88ee10e6d4cfbec
+  - enabled: 1
+    path: Assets/Scenes/Messages/MessageEdit.unity
+    guid: 6d4e120361eaac043b8d1041c03d3727
+  m_configObjects: {}

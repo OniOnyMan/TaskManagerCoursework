@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ef6305f4c55aa4248a21dcff6a289c19
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RegistrateRolePrefab: {fileID: 1739581522274606, guid: 5a655ee1f27d9fd4997d894d3f5cd352,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

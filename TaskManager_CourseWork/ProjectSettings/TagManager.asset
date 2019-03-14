@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ReporterToggle
+  - OperatorToggle
+  - MontagerToggle
+  - LoginText
+  - PasswordText
+  - NameText
+  - EmailText
+  - MessageText
+  - ConfirmButtonText
+  - HeaderText
+  - DescriptionText
+  - EmployersList
+  - DeadlineText
+  - CorrespondentDescription
+  - OperatorDescription
+  - MontagerDescription
+  - CorrespondentsList
+  - OperatorsList
+  - MontagersList
+  - CorrespondentDeadline
+  - OperatorDeadline
+  - MontagerDeadline
+  - UsersList
+  - PostsHeader
+  - RequestPassword
+  - SeparatorHeader
+  - SettingsButton
+  - ExitButton
+  - TaskList
+  - OpenTeam
+  - AuthorText
+  - StatusText
+  - UpdateButton
+  - EditButton
+  - AdminElements
+  - MessagesButton
+  - CreationDate
+  - ConformationDate
+  - SendButton
+  - MessagesList
+  - MessageField
+  - FirstNameText
+  - MiddleNameText
+  - LastNameText
+  - PhoneText
+  - OldPassword
+  - NewPassword
+  - ConfirmPassword
+  - RoleEdit
+  - RolesList
+  - DeleteButton
+  - RoleName
+  - AddUserButton
+  - AddRoleButton
+  - Heading
+  - ProjectsList
+  - InputForm
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

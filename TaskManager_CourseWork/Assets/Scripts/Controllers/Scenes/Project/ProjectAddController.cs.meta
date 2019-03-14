@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 15215abdc05e3f34882e1870d1cbc2a4
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - TaskAddPrefab: {fileID: 1034171716392922, guid: d24e935024df7c442971399161eb8b6c,
+      type: 2}
+  - AddButtonPrefab: {fileID: 1141689366674206, guid: 6461bc75d394f434daca93f9eccbfa5e,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
