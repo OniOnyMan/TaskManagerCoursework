@@ -8,7 +8,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_user_by_id", url);
+        _responder.Request("users/get_user_by_id", url);
         var user = JsonHelper.GetFromJson<UserDTO>(_responder.Responce);
         return user;
     }
@@ -17,12 +17,12 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("login={0}", WWW.EscapeURL(login));
-        _responder.Request("get_user", url);
+        _responder.Request("users/get_user", url);
         //var user = JsonHelper.GetFromJson<UserDTO>(_responder.Responce);
         //if (user == null)
         //{
         //    url = string.Format("email={0}", login);
-        //    _responder.Request("get_user", url);
+        //    _responder.Request("users/get_user", url);
         //}
         return JsonHelper.GetFromJson<UserDTO>(_responder.Responce);
     }
@@ -37,7 +37,7 @@ public static class UserController
             data.AddField("firstName", user.FirstName);
         if(user.MiddleName != null)
             data.AddField("middleName", user.MiddleName);
-        _responder.Send("update_user_name", data);
+        _responder.Send("users/update_user_name", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "UPDATE USER NAME",
              string.Format("Id: \"{0}\"; LastName: \"{1}\"; FirstName: \"{2}\"; MiddleName: \"{3}\"",
              user.Id, user.LastName, user.FirstName, user.MiddleName));
@@ -48,7 +48,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("code={0}", code);
-        _responder.Request("get_all_users_by_role", url);
+        _responder.Request("users/get_all_users_by_role", url);
         return JsonHelper.GetArrayFromJson<UserDTO>(_responder.Responce);
     }
 
@@ -58,7 +58,7 @@ public static class UserController
         var data = new WWWForm();
         data.AddField("id", id);
         data.AddField("newPassword", newPassword);
-        _responder.Send("update_user_password", data);
+        _responder.Send("users/update_user_password", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "UPDATE USER PASSWORD",
              string.Format("Id: \"{0}\"; PasswordHash: \"{1}\"", id, newPassword));
         return Convert.ToBoolean(_responder.Responce);
@@ -68,14 +68,14 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_user_password", url);
+        _responder.Request("users/get_user_password", url);
         return _responder.Responce;
     }
 
     public static UserDTO[] GetAllUsers()
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
-        _responder.Request("get_all_users", "");
+        _responder.Request("users/get_all_users", "");
         return JsonHelper.GetArrayFromJson<UserDTO>(_responder.Responce);
     }
 
@@ -83,7 +83,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("user={0}", user);
-        _responder.Request("is_user_admin", url);
+        _responder.Request("users_roles/is_user_admin", url);
         return Convert.ToBoolean(_responder.Responce);
     }
 
@@ -91,7 +91,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("user={0}", user);
-        _responder.Request("is_user_deleted", url);
+        _responder.Request("users_roles/is_user_deleted", url);
         return Convert.ToBoolean(_responder.Responce);
     }
 
@@ -105,7 +105,7 @@ public static class UserController
             data.AddField("email", user.Email);
         if (user.Phone != null)
             data.AddField("phone", user.Phone);
-        _responder.Send("update_user_token", data);
+        _responder.Send("users/update_user_token", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "UPDATE USER TOKEN",
              string.Format("Id: \"{0}\"; Login: \"{1}\"; Email: \"{2}\"; Phone: \"{3}\"",
              user.Id, user.Login, user.Email, user.Phone));
@@ -116,7 +116,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("delete_user", url);
+        _responder.Request("users_roles/delete_user", url);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "DELETE USER",
              string.Format("Id: \"{0}\"", id));
         return Convert.ToBoolean(_responder.Responce);
@@ -138,7 +138,7 @@ public static class UserController
         if (user.Phone != null)
             data.AddField("phone", user.Phone);
         data.AddField("passwordHash", passwordHash);
-        _responder.Send("add_user", data);
+        _responder.Send("users/add_user", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "ADD USER",
              string.Format("Id: \"{0}\"; LastName: \"{1}\"; FirstName: \"{2}\"; MiddleName: \"{3}\"; Login: \"{4}\"; Email: \"{5}\"; Phone: \"{6}\"",
              user.Id, user.LastName, user.FirstName, user.MiddleName, user.Login, user.Email, user.Phone));
@@ -149,7 +149,7 @@ public static class UserController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_worker_count_for_project", url);
+        _responder.Request("users/get_worker_count_for_project", url);
         int count;
         int.TryParse(_responder.Responce, out count);
         return count.ToString();

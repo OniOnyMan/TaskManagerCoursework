@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['userId']) && !empty($_POST['roleCode'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $userId = $_POST['userId'];
         $roleCode = $_POST['roleCode'];
         $query = $pdo->prepare("CALL `UsersRoles.DeleteUserRole`(?, ?)");

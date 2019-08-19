@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['message'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_GET['message'];
         $query = $pdo->prepare("CALL `Messages.DeleteMessage`(?)");
         $query->execute(array($id));

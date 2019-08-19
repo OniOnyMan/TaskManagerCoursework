@@ -9,7 +9,7 @@ public static class RoleController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_all_roles_for_user", url);
+        _responder.Request("users_roles/get_all_roles_for_user", url);
         return JsonHelper.GetArrayFromJson<RoleDTO>(_responder.Responce);
     }
 
@@ -17,7 +17,7 @@ public static class RoleController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("code={0}", code);
-        _responder.Request("get_role", url);
+        _responder.Request("roles/get_role", url);
         return JsonHelper.GetFromJson<RoleDTO>(_responder.Responce);
     }
 
@@ -25,14 +25,14 @@ public static class RoleController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_all_roles_missing_user", url);
+        _responder.Request("users_roles/get_all_roles_missing_user", url);
         return JsonHelper.GetArrayFromJson<RoleDTO>(_responder.Responce);
     }
 
     public static RoleDTO[] GetAllRoles()
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
-        _responder.Request("get_all_roles", "");
+        _responder.Request("roles/get_all_roles", "");
         return JsonHelper.GetArrayFromJson<RoleDTO>(_responder.Responce);
     }
 
@@ -42,7 +42,7 @@ public static class RoleController
         var data = new WWWForm();
         data.AddField("code", role.Code);
         data.AddField("name", role.Name);
-        _responder.Send("update_role", data);
+        _responder.Send("roles/update_role", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "UPDATE ROLE",
              string.Format("Code: \"{0}\"; Name: \"{1}\"", role.Code, role.Name));
         return Convert.ToBoolean(_responder.Responce);
@@ -52,7 +52,7 @@ public static class RoleController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("code={0}", code);
-        _responder.Request("get_all_users_by_role", url);
+        _responder.Request("users_roles/get_all_users_by_role", url);
         return JsonHelper.GetArrayFromJson<UserDTO>(_responder.Responce);
     }
 
@@ -62,7 +62,7 @@ public static class RoleController
         var data = new WWWForm();
         data.AddField("userId", userId);
         data.AddField("roleCode", roleCode);
-        _responder.Send("add_user_role", data);
+        _responder.Send("users_roles/add_user_role", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "ADD USER ROLE",
              string.Format("UserId: \"{0}\"; RoleCode: \"{1}\"", userId, roleCode));
         return Convert.ToBoolean(_responder.Responce);
@@ -74,7 +74,7 @@ public static class RoleController
         var data = new WWWForm();
         data.AddField("userId", userId);
         data.AddField("roleCode", roleCode);
-        _responder.Send("delete_user_role", data);
+        _responder.Send("users_roles/delete_user_role", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "DELETE USER ROLE",
              string.Format("UserId: \"{0}\"; RoleCode: \"{1}\"", userId, roleCode));
         return Convert.ToBoolean(_responder.Responce);
@@ -85,7 +85,7 @@ public static class RoleController
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var data = new WWWForm();
         data.AddField("name", name);
-        _responder.Send("add_role", data);
+        _responder.Send("roles/add_role", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "ADD ROLE",
              string.Format("Name: \"{0}\"", name));
         return Convert.ToBoolean(_responder.Responce);
@@ -95,7 +95,7 @@ public static class RoleController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("code={0}", code);
-        _responder.Request("delete_role", url);
+        _responder.Request("roles/delete_role", url);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "DELETE ROLE",
              string.Format("Code: \"{0}\"", code));
         return Convert.ToBoolean(_responder.Responce);

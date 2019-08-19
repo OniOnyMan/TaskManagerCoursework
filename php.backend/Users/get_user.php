@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['login'])) {
-		include('db_connection.php');
+		include('../db_connection.php');
 		//echo urlencode('+79998887766');
 		$login = $_GET[urldecode('login')];
 		$query = $pdo->query("SELECT COUNT(*) FROM `Users` WHERE `Login` = '" . $login . "'");

@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['courator']) && !empty($_POST['header']) && !empty($_POST['id'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $courator = $_POST['courator'];
         $header = $_POST['header'];

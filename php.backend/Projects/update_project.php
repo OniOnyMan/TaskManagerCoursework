@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['header'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $header = $_POST['header'];
         $query = $pdo->prepare("CALL `Projects.UpdateProjectHeader`(?, ?)");

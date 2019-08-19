@@ -11,7 +11,7 @@ public class Responder : MonoBehaviour
 
     static Responder()
     {
-        DomaintURL = "https://creatrixteam.ru/taskmanager/";
+        DomaintURL = "http://creatrixteam.ru/taskmanager/";
         //"https://creatrixteam.ru/madeinsstu/";
         //"http://u0523807.cp.regruhosting.ru/creatrixteam.ru/madeinsstu/";
         //"https://madeinsstu.000webhostapp.com/";

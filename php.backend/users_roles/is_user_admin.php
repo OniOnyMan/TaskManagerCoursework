@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['user'])) {
-    include('db_connection.php');
+    include('../db_connection.php');
     $id = $_GET['user'];
     $query = $pdo->query("CALL `UsersRoles.IsUserAdmin`('" . $id . "')");
     if ($query->fetchColumn() > 0)

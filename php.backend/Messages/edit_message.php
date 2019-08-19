@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['text'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $text = $_POST['text'];
         $query = $pdo->prepare("CALL `Messages.EditTextMessage`(?, ?)");

@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['newPassword'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $newPassword = $_POST['newPassword'];
         $query = $pdo->prepare("CALL `Users.UpdateUserPassword`(?, ?)");

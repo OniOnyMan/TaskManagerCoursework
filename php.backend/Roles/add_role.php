@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['name'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $name = $_POST['name'];
         $query = $pdo->prepare("CALL `Roles.AddRole`(@code, ?)");
         $query->execute(array($name));

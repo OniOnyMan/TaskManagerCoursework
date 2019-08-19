@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['worker'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_GET['worker'];
         $query = $pdo->prepare("CALL `Tasks.GetAllTasksForWorkerInWork`(?)");
         $query->bindParam(1, $id);

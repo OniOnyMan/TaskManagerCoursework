@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['login'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $login = $_POST['login'];
         $email = isset($_POST['email']) ? $_POST['email'] : null;

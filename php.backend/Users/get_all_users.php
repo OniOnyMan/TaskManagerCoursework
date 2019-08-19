@@ -1,5 +1,5 @@
 <?php
-include('db_connection.php');
+include('../db_connection.php');
 $query = $pdo->prepare("CALL `Users.GetAllUsers`()");
 $query->execute();
 /*if($query->errorCode() === "00000")

@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['userId']) && !empty($_POST['roleCodes'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $userId = $_POST['userId'];
         $roleCodes = $_POST['roleCodes'];
         //$query = $pdo->prepare("CALL `UsersRoles.AddUserRole`(?, ?)");

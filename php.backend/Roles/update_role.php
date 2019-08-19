@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['code']) && !empty($_POST['name'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $code = $_POST['code'];
         $name = $_POST['name'];
         $query = $pdo->prepare("CALL `Roles.UpdateRole`(?, ?)");

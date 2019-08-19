@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['code'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $code = $_GET['code'];
         $query = $pdo->prepare("CALL `Roles.DeleteRole`(?)");
         $query->execute(array($code));

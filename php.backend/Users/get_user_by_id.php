@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['id'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_GET['id'];
         $query = $pdo->prepare("CALL `Users.GetUserById`(?)");
         $query->bindParam(1, $id);

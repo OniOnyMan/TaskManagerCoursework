@@ -8,7 +8,7 @@ public static class TaskController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("worker={0}", worker);
-        _responder.Request("get_all_tasks_user_inwork", url);
+        _responder.Request("tasks/get_all_tasks_user_inwork", url);
         return JsonHelper.GetArrayFromJson<TaskDTO>(_responder.Responce);
     }
 
@@ -16,7 +16,7 @@ public static class TaskController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_task", url);
+        _responder.Request("tasks/get_task", url);
         return JsonHelper.GetFromJson<TaskDTO>(_responder.Responce);
     }
 
@@ -24,7 +24,7 @@ public static class TaskController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("get_all_tasks_project", url);
+        _responder.Request("tasks/get_all_tasks_project", url);
         return JsonHelper.GetArrayFromJson<TaskDTO>(_responder.Responce);
     }
 
@@ -36,7 +36,7 @@ public static class TaskController
         data.AddField("project", task.ProjectId);
         data.AddField("description", task.Description);
         data.AddField("deadline", task.Deadline);
-        _responder.Send("add_task", data);
+        _responder.Send("tasks/add_task", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "ADD TASK",
              string.Format("WorkerId: \"{0}\"; ProjectId: \"{1}\"; Description: \"{2}\"; Deadline: \"{3}\"", 
              task.WorkerId, task.ProjectId, task.Description, task.Deadline));
@@ -47,7 +47,7 @@ public static class TaskController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("set_task_completed", url);
+        _responder.Request("tasks/set_task_completed", url);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "SET TASK COMPLETED",
              string.Format("Id: \"{0}\"", id));
         return Convert.ToBoolean(_responder.Responce);
@@ -57,7 +57,7 @@ public static class TaskController
     {
         _responder = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Responder>();
         var url = string.Format("id={0}", id);
-        _responder.Request("delete_task", url);
+        _responder.Request("tasks/delete_task", url);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "DELETE TASK",
              string.Format("Id: \"{0}\"", id));
         return Convert.ToBoolean(_responder.Responce);
@@ -71,7 +71,7 @@ public static class TaskController
         data.AddField("worker", task.WorkerId);
         data.AddField("description", task.Description);
         data.AddField("deadline", task.Deadline);
-        _responder.Send("update_task", data);
+        _responder.Send("tasks/update_task", data);
         LogsController.AddLog(PlayerPrefs.GetString("SessionUserId"), "UPDATE TASK",
              string.Format("Id: \"{0}\"; WorkerId: \"{1}\"; Description: \"{2}\"; Deadline: \"{3}\"",
              task.Id, task.WorkerId, task.Description, task.Deadline));

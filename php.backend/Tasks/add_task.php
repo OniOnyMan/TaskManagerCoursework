@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['worker']) && !empty($_POST['project']) && !empty($_POST['description']) && !empty($_POST['deadline'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $worker = $_POST['worker'];
         $project = $_POST['project'];
         $description = $_POST['description'];

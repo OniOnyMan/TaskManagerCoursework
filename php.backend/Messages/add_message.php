@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['author']) && !empty($_POST['project']) && !empty($_POST['text'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $author = $_POST['author'];
         $project = $_POST['project'];
         $text = $_POST['text'];

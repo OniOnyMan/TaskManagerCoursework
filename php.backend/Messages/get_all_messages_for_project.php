@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['project'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_GET['project'];
         $query = $pdo->prepare("CALL `Messages.GetAllMessagesForProject`(?)");
         $query->bindParam(1, $id);

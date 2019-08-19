@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['lastName']) && !empty($_POST['login']) && !empty($_POST['passwordHash'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;
         $middleName = isset($_POST['middleName']) ? $_POST['middleName'] : null;

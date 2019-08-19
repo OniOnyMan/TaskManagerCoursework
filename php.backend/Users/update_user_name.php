@@ -1,6 +1,6 @@
 <?php
 if (!empty($_POST['id']) && !empty($_POST['lastName'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_POST['id'];
         $lastName = $_POST['lastName'];
         $firstName = isset($_POST['firstName']) ? $_POST['firstName'] : null;

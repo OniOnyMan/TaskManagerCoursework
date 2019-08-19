@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['code'])) {
-        include('db_connection.php');
+        include('../db_connection.php');
         $id = $_GET['code'];
         $query = $pdo->prepare("CALL `UsersRoles.GetAllUsersByRole`(?)");
         $query->bindParam(1, $id);
