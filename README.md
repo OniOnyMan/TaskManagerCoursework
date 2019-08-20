@@ -2,6 +2,7 @@
   Android client for work with DB.
 
 For run this application you have to:
+
 0. Run some server, "OpenServer", e.g.: https://ospanel.io/download/;
 1. Import to MySQL server scripts from "mySQL_scripts" folder in the following sequence:
   а) Import "0. CreateDatabase.sql";
